@@ -2,6 +2,7 @@
 
 # extract the source directory from the command used to call this script
 SOURCEDIR=`echo "${0%/*}"`
+SOURCEDIR=`echo "${0%/*}"`
 SOURCEROOT=`echo "${0%/*/*}"`
 LESSONDIR=`pwd`
 
@@ -74,7 +75,11 @@ while IFS= read -r line
 do
     EVAL=`echo " \"$line\" "`
     if [[ $EVAL == *"html"* ]]; then
-    echo "        <option value=\"$line\">leqx</option> " >> 0_FrameX.html
+        #trim trailing text 
+        TRIMDIR=`echo "${line%/*}"`
+        #trim leading text 
+        TRIMDIR=`echo "${TRIMDIR#*/}"`
+    echo "        <option value=\"$line\">"$TRIMDIR"</option> " >> 0_FrameX.html
         ((arrayIndex++))
     fi
 done < "$input"
