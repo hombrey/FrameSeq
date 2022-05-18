@@ -53,21 +53,21 @@ echo "        <option value=\"$SOURCEROOT/Klyne/klyne.html\">9_classMgt</option>
 echo "" >> 0_FrameX.html
 
 #list html files in lesson plan root directory
-ls -d *.html> /tmp/list.txt
+ls -d *.html > /tmp/list.txt
 input="/tmp/list.txt"
 arrayIndex=1;
 
 while IFS= read -r line
 do
     EVAL=`echo " \"$line\" "`
-    if [[ $EVAL == *"html"* && $EVAL != *"0_Frame"* && $EVAL != *"0_Session"* ]]; then
+    if [[ $EVAL == *"html"* && $EVAL != *"0_Frame"* && $EVAL != *"0_sess"* ]]; then
     echo "        <option value=\"./$line\">leqx</option> " >> 0_FrameX.html
         ((arrayIndex++))
     fi
 done < "$input"
 
 #list html files tucked in a subdirectory
-ls -d ./*/*.html> /tmp/list.txt
+ls -d ./*/*.html > /tmp/list.txt
 input="/tmp/list.txt"
 arrayIndex=1;
 
