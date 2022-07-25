@@ -10,6 +10,7 @@ echo "    <!--{{{head-->" > 0_FrameX.html
 echo "<!DOCTYPE html>" >> 0_FrameX.html
 echo "<html lang=\"en\">" >> 0_FrameX.html
 echo "<head>" >> 0_FrameX.html
+echo "    <script src=\"$SOURCEDIR/functions.js\"></script> " >> 0_FrameX.html
 echo "    <script type=\"text/javascript\">" >> 0_FrameX.html
 echo "        function setSeqSource() {" >> 0_FrameX.html
 echo "            var theSelect = document.getElementById('seqSelect');" >> 0_FrameX.html
